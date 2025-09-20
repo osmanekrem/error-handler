@@ -1,6 +1,6 @@
 # @osmanekrem/error-handler
 
-Advanced error handling utilities for TypeScript applications with TRPC support.
+Advanced error handling utilities for TypeScript applications with middleware, metrics, and monitoring support.
 
 ## Features
 
@@ -12,6 +12,10 @@ Advanced error handling utilities for TypeScript applications with TRPC support.
 - 🎯 **Factory Functions** - Pre-built error creators
 - 🔍 **Type Guards** - Runtime error type checking
 - 📝 **Comprehensive Logging** - Structured error logging
+- 🌐 **Framework Middleware** - Express.js and Fastify support
+- 📈 **Error Metrics** - Built-in monitoring and analytics
+- 🔔 **Prometheus Integration** - Production-ready metrics
+- 🎛️ **Error Dashboard** - Real-time error monitoring
 
 ## Installation
 
@@ -26,7 +30,14 @@ pnpm add @osmanekrem/error-handler
 ## Quick Start
 
 ```typescript
-import { AppError, createError, errorHandler, CircuitBreaker } from '@osmanekrem/error-handler';
+import { 
+  AppError, 
+  createError, 
+  errorHandler, 
+  CircuitBreaker,
+  expressErrorMiddleware,
+  ErrorMetrics 
+} from '@osmanekrem/error-handler';
 
 // Create a custom error
 const error = createError.notFound('User', { userId: '123' });
@@ -42,6 +53,16 @@ try {
 // Use circuit breaker
 const circuitBreaker = new CircuitBreaker();
 const result = await circuitBreaker.execute(() => riskyOperation());
+
+// Express.js middleware
+app.use(expressErrorMiddleware({
+  logErrors: true,
+  includeStack: process.env.NODE_ENV === 'development'
+}));
+
+// Error metrics
+const metrics = new ErrorMetrics();
+metrics.recordError(error, { service: 'user-service' });
 ```
 
 ## API Reference

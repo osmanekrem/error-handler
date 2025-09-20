@@ -8,6 +8,7 @@ export interface ErrorHandlerOptions {
   includeStack?: boolean;
   sanitizeContext?: boolean;
   onError?: (error: AppError) => void;
+  context?: Record<string, unknown>;
 }
 
 /**

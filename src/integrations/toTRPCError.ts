@@ -1,5 +1,11 @@
-import { TRPCError } from '@trpc/server';
 import { AppError } from '../core/AppError';
+
+// TRPC types - optional dependency
+type TRPCError = {
+  code: string;
+  message: string;
+  cause?: unknown;
+};
 
 /**
  * Convert AppError to TRPCError for tRPC compatibility
@@ -7,11 +13,11 @@ import { AppError } from '../core/AppError';
 export const toTRPCError = (error: AppError): TRPCError => {
   const trpcErrorCode = getTRPCErrorCode(error.statusCode);
   
-  return new TRPCError({
+  return {
     code: trpcErrorCode,
     message: error.message,
     cause: error,
-  });
+  };
 };
 
 /**

@@ -20,6 +20,13 @@ export { toTRPCError } from './integrations/toTRPCError';
 // Pattern exports
 export { CircuitBreaker } from './patterns/CircuitBreaker';
 
+// Middleware exports
+export { expressErrorMiddleware, asyncHandler } from './middleware/express';
+export { fastifyErrorPlugin, createFastifyError } from './middleware/fastify';
+
+// Metrics exports
+export { ErrorMetrics, PrometheusMetrics } from './metrics';
+
 // Re-export types
 export type {
   AppErrorOptions,
@@ -28,3 +35,11 @@ export type {
   CircuitBreakerOptions,
   CircuitBreakerState,
 } from './core/types';
+
+// Middleware types
+export type { ExpressErrorMiddlewareOptions } from './middleware/express';
+export type { FastifyErrorPluginOptions } from './middleware/fastify';
+
+// Metrics types
+export type { ErrorMetricsOptions, ErrorStats, ErrorRecord } from './metrics/ErrorMetrics';
+export type { PrometheusMetricsOptions } from './metrics/PrometheusMetrics';
