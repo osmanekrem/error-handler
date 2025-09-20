@@ -1,0 +1,67 @@
+{
+  "name": "@osmanekrem/error-handler",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Advanced error handling utilities for TypeScript applications with TRPC support",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "type-check": "tsc --noEmit",
+    "prepublishOnly": "npm run build && npm run test"
+  },
+  "keywords": [
+    "error-handling",
+    "typescript",
+    "trpc",
+    "utilities",
+    "error-management",
+    "structured-errors"
+  ],
+  "author": "Osman Ekrem",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/osmanekrem/error-handler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/osmanekrem/error-handler/issues"
+  },
+  "homepage": "https://github.com/osmanekrem/error-handler#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.8",
+    "@rollup/plugin-node-resolve": "^15.3.1",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/node": "^20.19.17",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.57.1",
+    "rollup": "^4.52.0",
+    "rollup-plugin-dts": "^6.2.3",
+    "tslib": "^2.8.1",
+    "typescript": "^5.9.2",
+    "vitest": "^1.6.1"
+  },
+  "peerDependencies": {
+    "@trpc/server": "^10.0.0 || ^11.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@trpc/server": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
