@@ -1,11 +1,58 @@
 {
   "name": "@osmanekrem/error-handler",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "type": "module",
   "description": "Advanced error handling utilities for TypeScript applications with middleware, metrics, and monitoring support",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./core": {
+      "import": "./dist/core.esm.js",
+      "require": "./dist/core.js",
+      "types": "./dist/core.d.ts"
+    },
+    "./factories": {
+      "import": "./dist/factories.esm.js",
+      "require": "./dist/factories.js",
+      "types": "./dist/factories.d.ts"
+    },
+    "./express": {
+      "import": "./dist/express.esm.js",
+      "require": "./dist/express.js",
+      "types": "./dist/express.d.ts"
+    },
+    "./hono": {
+      "import": "./dist/hono.esm.js",
+      "require": "./dist/hono.js",
+      "types": "./dist/hono.d.ts"
+    },
+    "./fastify": {
+      "import": "./dist/fastify.esm.js",
+      "require": "./dist/fastify.js",
+      "types": "./dist/fastify.d.ts"
+    },
+    "./patterns": {
+      "import": "./dist/patterns.esm.js",
+      "require": "./dist/patterns.js",
+      "types": "./dist/patterns.d.ts"
+    },
+    "./metrics": {
+      "import": "./dist/metrics.esm.js",
+      "require": "./dist/metrics.js",
+      "types": "./dist/metrics.d.ts"
+    },
+    "./cache": {
+      "import": "./dist/cache.esm.js",
+      "require": "./dist/cache.js",
+      "types": "./dist/cache.d.ts"
+    }
+  },
   "files": [
     "dist",
     "README.md",
@@ -33,6 +80,7 @@
     "monitoring",
     "express",
     "fastify",
+    "hono",
     "prometheus"
   ],
   "author": "Osman Ekrem",
@@ -56,8 +104,11 @@
     "eslint": "^8.57.1",
     "express": "^4.18.2",
     "fastify": "^4.24.3",
+    "hono": "^4.0.0",
     "rollup": "^4.52.0",
+    "rollup-plugin-analyzer": "^4.0.0",
     "rollup-plugin-dts": "^6.2.3",
+    "rollup-plugin-visualizer": "^6.0.3",
     "tslib": "^2.8.1",
     "typescript": "^5.9.2",
     "vitest": "^1.6.1"

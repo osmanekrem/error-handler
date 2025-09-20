@@ -23,6 +23,7 @@ export { CircuitBreaker } from './patterns/CircuitBreaker';
 // Middleware exports
 export { expressErrorMiddleware, asyncHandler } from './middleware/express';
 export { fastifyErrorPlugin, createFastifyError } from './middleware/fastify';
+export { honoErrorMiddleware, honoErrorHandler, createHonoError } from './middleware/hono';
 
 // Metrics exports
 export { ErrorMetrics, PrometheusMetrics } from './metrics';
@@ -67,6 +68,7 @@ export type {
 // Middleware types
 export type { ExpressErrorMiddlewareOptions } from './middleware/express';
 export type { FastifyErrorPluginOptions } from './middleware/fastify';
+export type { HonoErrorMiddlewareOptions } from './middleware/hono';
 
 // Metrics types
 export type { ErrorMetricsOptions, ErrorStats, ErrorRecord } from './metrics/ErrorMetrics';
