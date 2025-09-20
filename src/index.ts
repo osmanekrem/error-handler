@@ -27,6 +27,34 @@ export { fastifyErrorPlugin, createFastifyError } from './middleware/fastify';
 // Metrics exports
 export { ErrorMetrics, PrometheusMetrics } from './metrics';
 
+// Recovery exports
+export { Retryable, retry } from './recovery';
+export type { RetryOptions, RetryResult } from './recovery';
+
+export {
+  RetryStrategy,
+  DefaultRetryStrategy,
+  DatabaseRetryStrategy,
+  ApiRetryStrategy,
+  FileRetryStrategy,
+  RetryStrategyFactory
+} from './recovery';
+
+// Custom Error exports
+export { BaseCustomError } from './errors';
+export { DatabaseError, createDatabaseError } from './errors';
+export { ValidationError, createValidationError } from './errors';
+export { BusinessError, createBusinessError } from './errors';
+
+// Cache exports
+export { ErrorCache, DeduplicationService } from './cache';
+export type { ErrorCacheOptions, CachedError, ErrorCacheStats } from './cache';
+export type { DeduplicationOptions, DeduplicationResult } from './cache';
+
+// Serialization exports
+export { ErrorSerializer } from './serialization';
+export type { SerializationOptions, SerializedError } from './serialization';
+
 // Re-export types
 export type {
   AppErrorOptions,
@@ -43,3 +71,8 @@ export type { FastifyErrorPluginOptions } from './middleware/fastify';
 // Metrics types
 export type { ErrorMetricsOptions, ErrorStats, ErrorRecord } from './metrics/ErrorMetrics';
 export type { PrometheusMetricsOptions } from './metrics/PrometheusMetrics';
+
+// Custom Error types
+export type { DatabaseErrorContext } from './errors/DatabaseError';
+export type { ValidationErrorContext } from './errors/ValidationError';
+export type { BusinessErrorContext } from './errors/BusinessError';
